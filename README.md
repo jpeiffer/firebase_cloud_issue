@@ -1,10 +1,10 @@
 # firebase_cloud_issue
 
-Example project to help call out a build problem for iOS and the [cloud_firestore: ^3.1.6](https://pub.dev/packages/cloud_firestore) package.
+Example project to help call out a build problem for iOS and the [cloud_firestore: ^3.1.7](https://pub.dev/packages/cloud_firestore) package.
 
 The issue is that adding this line to the Podfile to speed up the iOS build also breaks the builds:
 ```
-  pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '8.10.0'
+  pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '8.11.0'
 ```
 
 When that is enabled and you run:
@@ -78,4 +78,4 @@ Xcode's output:
 
 ## Workaround
 
-Add `firebase_database: ^9.0.5` as dependency to the `pubspec.yaml` and rerun the above command to build the ios app and it it works.  On the plus side, the build time is massively reduced because the optimization can now be in place.  The down side is you may be bringing in a dependency you don't need to make that happen.
+Add `firebase_database: ^9.0.6` as dependency to the `pubspec.yaml` and rerun the above command to build the ios app and it it works.  On the plus side, the build time is massively reduced because the optimization can now be in place.  The down side is you may be bringing in a dependency you don't need to make that happen.

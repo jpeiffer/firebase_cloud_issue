@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-11
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: stable
+      - name: Build iOS
+        run: |
+          set -e
+
+          flutter clean
+          flutter packages get
+          cd ios
+          pod install --repo-update
+          cd ..
+          flutter build ios --release --no-codesign

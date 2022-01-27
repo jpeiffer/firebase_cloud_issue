@@ -9,7 +9,7 @@ environment:
   sdk: ">=2.15.1 <3.0.0"
 
 dependencies:
-  cloud_firestore: ^3.1.6
+  cloud_firestore: ^3.1.7
   ### Uncomment the following line to fix the build when the Podfile optimization is in place.
   # firebase_database: ^9.0.5
   flutter:
